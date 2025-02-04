@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import productsRouter from './products/productsRoutes';
 dotenv.config();
 
 const app = express();
@@ -8,9 +9,10 @@ app.disable('x-powered-by');
 app.use(express.json());
 
 app.get('/', (_req, res) => {
-    res.send('Hello World');
+    res.send('Hola TAI');
 })
 
+app.use('/products', productsRouter);
 
 const PORT = process.env.PORT;
 
